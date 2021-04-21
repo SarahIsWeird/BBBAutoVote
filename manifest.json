@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+
+    "name": "BBBAutoVote",
+    "description": "Automatically votes yes after a short delay.",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+
+    "icons": {
+        "48": "icon.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.hwr-berlin.de/html5client/join",
+                "https://*.bigbluebutton.org/html5client/*"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ],
+
+    "permissions": [
+        "activeTab", 
+        "https://*.hwr-berlin.de/html5client/join"
+    ]
+}
